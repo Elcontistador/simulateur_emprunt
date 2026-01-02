@@ -1,0 +1,27 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Lato, Helvetica, sans-serif;
+  color: #111;
+}
+
+h2 {
+    color: #198754 !important; /* Code hexadécimal pour le vert "Success" de Bootstrap */
+}
+
+span {
+    font-weight: 700; /* 700 équivaut à "bold" */
+}
+
+.form-range:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+.form-range:active::-moz-range-thumb {
+  transform: scale(1.2);
+}
