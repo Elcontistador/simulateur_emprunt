@@ -25,3 +25,61 @@ span {
 .form-range:active::-moz-range-thumb {
   transform: scale(1.2);
 }
+
+/* --- STYLE POUR L'IMPRESSION --- */
+@media print {
+    /* 1. On cache les éléments inutiles sur papier */
+    .form-range,       /* Les curseurs */
+    .d-flex.justify-content-between, /* Les labels min/max sous les curseurs */
+    .btn,              /* Les boutons */
+    footer {           /* Le pied de page si vous en avez un */
+        display: none !important;
+    }
+
+    /* 2. On retire les ombres et les bordures pour économiser l'encre */
+    .shadow-sm {
+        box-shadow: none !important;
+    }
+    .border {
+        border: none !important;
+    }
+    .rounded {
+        border-radius: 0 !important;
+    }
+
+    /* 3. On force le fond en blanc et le texte en noir */
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    /* On s'assure que le conteneur prend toute la largeur du papier */
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 4. Gestion des titres */
+    /* On réduit un peu la taille des gros titres pour que tout tienne sur une page */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 20px !important; color: black !important; } /* On force le noir au lieu du vert */
+    h3 { font-size: 16px !important; }
+
+    /* 5. Mise en page */
+    /* On ajoute un petit espace après le titre "Simulation" */
+    #titre {
+        text-decoration: underline;
+    }
+    
+    /* Optionnel : Ajouter un message en bas de page via CSS */
+    body::after {
+        content: "Simulation réalisée à titre indicatif.";
+        display: block;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 12px;
+        color: #555;
+    }
+}

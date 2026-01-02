@@ -12,9 +12,6 @@ const affichageTaux = document.getElementById('affichageTaux');
 const affichageTotal = document.getElementById('montantTotal');
 const affichageMensualite = document.getElementById('montantParMois');
 const affichageInteret = document.getElementById('interetTotal');
-
-// Constante : Taux fixe de 7%
-const tauxAnnuel = 0.07;
     
 // Fonction pour formater un nombre (ex: 10000 -> 10 000)
 const formatNombre = (nombre) => {
@@ -59,3 +56,27 @@ curseurTaux.addEventListener('input', calculerResultats);
 
 // Calcul initial au chargement de la page
 calculerResultats();
+
+// --- GESTION DE LA DATE ---
+
+const afficherDate = () => {
+    // Options pour avoir une date type "Vendredi 2 janvier 2026"
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+    
+    // On récupère la date du jour formatée en français
+    const dateDuJour = new Date().toLocaleDateString('fr-FR', options);
+
+    // Petite astuce pour mettre la première lettre du jour en majuscule (vendredi -> Vendredi)
+    const dateCapitalisee = dateDuJour.charAt(0).toUpperCase() + dateDuJour.slice(1);
+
+    // On injecte le texte dans la balise HTML
+    document.getElementById('dateSimulation').innerText = `Simulation réalisée le ${dateCapitalisee}`;
+};
+
+// On lance la fonction
+afficherDate();

@@ -51,6 +51,7 @@
       <div class="row border rounded p-4 mb-4 shadow-sm mt-5 text-center">
         <div class="col-12 mb-4">
           <h1><span id="titre" class="fw-bold">Calculateur</span> de prêt <span class="badge bg-success">Simulation personnalisée</span></h1>
+          <p id="dateSimulation" class="text-muted fst-italic mb-4"></p>
         </div>
         <div class="col-md-4">
           <div class="p-3 border rounded bg-light">
@@ -70,6 +71,11 @@
             <h3 class="text-danger"><span id="interetTotal">0</span> €</h3>
           </div>
         </div>
+      </div>
+      <div class="text-center mt-4 d-print-none">
+        <button onclick="window.print()" class="btn btn-outline-dark">
+          🖨️ Imprimer la simulation
+        </button>
       </div>
     </div>
     
